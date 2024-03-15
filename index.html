@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(160deg, #89f7fe 0%, #66a6ff 100%);
+            background-size: cover;
+            height:720px;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 70px;
+            color:white;
+            font-family: "Audiowide", sans-serif;
+            text-align: center;
+            letter-spacing:0.1cm;
+        }
+        .men{
+            display:grid;
+            grid-template-columns: auto auto auto;
+            border:none;
+        }
+        .men>div{
+            display:grid;
+            grid-template-rows: 40px 40px 40px;
+            border:solid white;
+            font-size: 80px;
+            text-align: center;
+            margin:10px;
+            width:200px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0  10px white;
+            color: #3ec4f5;
+            font-family: "Audiowide", sans-serif;
+        }
+        #hii{
+            margin:50px;
+            font-size: 56px;
+            color:white;
+            font-family: "Audiowide", sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            letter-spacing: 0.1cm;
+        }
+        @media screen and (max-width:1000px){
+            .men>div{
+                width: 100px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>TIC TAC TOE</h1>
+    <div id="one" class="men">
+
+    </div>
+    <div id="two" class="men">
+
+    </div>
+    <div id="tre" class="men">
+
+    </div>
+    <div id="hii">
+
+    </div>
+    <script>
+        let a=document.querySelectorAll(".men")
+        let f=document.querySelector("#one")
+        let res=document.getElementById("hii")
+    let g=document.querySelector("#two")
+    let h=document.querySelector("#tre")
+        let i
+        let k=1
+        for(i=0;i<3;i++)
+        {
+          for(let j=0;j<3;j++)
+        {
+            let b=document.createElement("div")
+           /* b.textContent="n"+(i)+(j)*/
+           b.addEventListener('click',go)
+           a[i].appendChild(b)
+        }
+    }
+    function go(b)
+    {
+        if(this.textContent==="")
+        {
+        if(k%2==0)
+        {
+        this.textContent="x"
+        this.style.color="rgb(241, 107, 241)"
+        }
+        else
+        {
+            this.textContent="o"
+        }
+        k=k+1
+    if(f.children[0].textContent==='x'&&f.children[1].textContent==='x'&&f.children[2].textContent==='x'||
+    g.children[0].textContent==='x'&&g.children[1].textContent==='x'&&g.children[2].textContent==='x'||
+    h.children[0].textContent==='x'&&h.children[1].textContent==='x'&&h.children[2].textContent==='x')
+    {
+        res.innerHTML="X WON"
+      
+    }
+    else if(f.children[0].textContent==='o'&&f.children[1].textContent==='o'&&f.children[2].textContent==='o'||
+    g.children[0].textContent==='o'&&g.children[1].textContent==='o'&&g.children[2].textContent==='o'||
+    h.children[0].textContent==='o'&&h.children[1].textContent==='o'&&h.children[2].textContent==='o')
+    {
+        res.innerHTML="YOU WON"
+    }
+    else if(f.children[0].textContent==='x'&&g.children[1].textContent==='x'&&h.children[2].textContent==='x')
+    {
+        res.innerHTML="X WON"
+    }
+    else if(f.children[0].textContent==='o'&&g.children[1].textContent==='o'&&h.children[2].textContent==='o')
+    {
+        res.innerHTML="YOU WON"
+    }
+    else if(f.children[2].textContent==='x'&&g.children[1].textContent==='x'&&h.children[0].textContent==='x')
+    {
+        res.innerHTML="X WON"
+    }
+    else if(f.children[2].textContent==='o'&&g.children[1].textContent==='o'&&h.children[0].textContent==='o')
+    {
+        res.innerHTML="YOU WON"
+    }
+    else if(f.children[0].textContent==='x'&&g.children[0].textContent==='x'&&h.children[0].textContent==='x'||
+    f.children[1].textContent==='x'&&g.children[1].textContent==='x'&&h.children[1].textContent==='x'||
+    f.children[2].textContent==='x'&&g.children[2].textContent==='x'&&h.children[2].textContent==='x')
+    {
+        res.innerHTML="X WON"
+    }
+    else if(f.children[0].textContent==='o'&&g.children[0].textContent==='o'&&h.children[0].textContent==='o'||
+    f.children[1].textContent==='o'&&g.children[1].textContent==='o'&&h.children[1].textContent==='o'||
+    f.children[2].textContent==='o'&&g.children[2].textContent==='o'&&h.children[2].textContent==='o')
+    {
+        res.innerHTML="YOU WON"
+    }
+}
+}
+ </script>
+</body>
+</html>
